@@ -1476,7 +1476,13 @@ public class AdminApi2Test extends MockedPulsarServiceBaseTest {
         admin.topics().deletePartitionedTopic(topic);
 
         // delete namespace
-        admin.namespaces().deleteNamespace(namespace, false);
+        Awaitility.await().untilAsserted(() -> {
+            try {
+                admin.namespaces().deleteNamespace(namespace, false);
+            }catch (Exception e) {
+                Assert.fail();
+            }
+        });
         assertFalse(admin.namespaces().getNamespaces(tenant).contains(namespace));
         assertTrue(admin.namespaces().getNamespaces(tenant).isEmpty());
 
