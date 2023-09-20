@@ -183,6 +183,7 @@ flexible messaging model and an intuitive client API.</description>
     <hbase.version>2.4.9</hbase.version>
     <guava.version>32.1.1-jre</guava.version>
     <jcip.version>1.0</jcip.version>
+      
     <prometheus-jmx.version>0.16.1</prometheus-jmx.version>
     <confluent.version>7.0.1</confluent.version>
     <kafka.confluent.schemaregistryclient.version>5.3.0</kafka.confluent.schemaregistryclient.version>
